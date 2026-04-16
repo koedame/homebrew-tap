@@ -4,26 +4,26 @@
 class Chordsketch < Formula
   desc "ChordPro file format parser and renderer"
   homepage "https://github.com/koedame/chordsketch"
-  version "0.2.0"
+  version "0.2.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/koedame/chordsketch/releases/download/v0.2.0/chordsketch-v0.2.0-aarch64-apple-darwin.tar.gz"
-      sha256 "67b0d3b1dcf5aa37b4284658850f77baf56529af20c16a1eebf2ace05fa81596"
+      url "https://github.com/koedame/chordsketch/releases/download/v0.2.1/chordsketch-v0.2.1-aarch64-apple-darwin.tar.gz"
+      sha256 "53480b2f8dd360f4e5524422ac9d96d4553fb9fcb7910a42bb05fe0e684d9f9c"
     else
-      url "https://github.com/koedame/chordsketch/releases/download/v0.2.0/chordsketch-v0.2.0-x86_64-apple-darwin.tar.gz"
-      sha256 "ddc95fda30dc62c2c400cdf23c61b0da9a31ab857d19528fa7af6a7c39dcdd5a"
+      url "https://github.com/koedame/chordsketch/releases/download/v0.2.1/chordsketch-v0.2.1-x86_64-apple-darwin.tar.gz"
+      sha256 "b46db765b134e173a622fb2691373416d431bf61c8bad622a09a62d7b68c2d59"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/koedame/chordsketch/releases/download/v0.2.0/chordsketch-v0.2.0-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "b38dc22cb0724fc574622ac56b2c403f856d6c2b2b79b925932559352086658e"
+      url "https://github.com/koedame/chordsketch/releases/download/v0.2.1/chordsketch-v0.2.1-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "9cf9d5766aebb6e82ac2f9d6858614278fc62171f54ff991b1cad601ad9ffc39"
     else
-      url "https://github.com/koedame/chordsketch/releases/download/v0.2.0/chordsketch-v0.2.0-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "3adc055d370ff1ec93e16eb2ac20034d2add6844e12411d64fc58396e7ab6b06"
+      url "https://github.com/koedame/chordsketch/releases/download/v0.2.1/chordsketch-v0.2.1-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "c555b01cbb7f01db8be182b3708babe4b172419de7d19d7eb2da04835a14fec3"
     end
   end
 
