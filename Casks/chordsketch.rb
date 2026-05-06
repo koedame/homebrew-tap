@@ -9,14 +9,14 @@
 # upstream Homebrew docs recommend for unsigned casks.
 
 cask "chordsketch" do
-  version "0.3.0"
+  version "0.4.0"
 
   on_arm do
-    sha256 "8e0ef3a749db38d7cb5016eddf1f3007cff93a1b0c26e38b9db96c0fc29f4fe0"
+    sha256 "cad8473ce6b5a7b5d9879b7a18c9a6821ffc16d84c67e4806a7d0bb9236b0675"
     url "https://github.com/koedame/chordsketch/releases/download/desktop-v#{version}/ChordSketch_#{version}_aarch64.dmg"
   end
   on_intel do
-    sha256 "cb163b95dbb2284b496d62f4f7ebfeae0429e1c8219e838cec8ac6ed503fd06e"
+    sha256 "6d0e5701148b4cf942ee550a414ddfc68eb6c5ebeb499dc59dd2b0917ff9e32a"
     url "https://github.com/koedame/chordsketch/releases/download/desktop-v#{version}/ChordSketch_#{version}_x64.dmg"
   end
 
