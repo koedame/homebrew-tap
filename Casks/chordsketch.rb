@@ -9,14 +9,16 @@
 # upstream Homebrew docs recommend for unsigned casks.
 
 cask "chordsketch" do
-  version "0.6.0"
+  version "0.7.0"
 
   on_arm do
-    sha256 "3e8b095900c5d667e982a923cef371092f74e0f29514ac475da1f7ebb8a2ef0a"
+    sha256 "9f4b5acf803d9a278763345eed290d4e5ea8cd4d5f47fb0b4c24c6c21dcc4ff8"
+
     url "https://github.com/koedame/chordsketch/releases/download/desktop-v#{version}/ChordSketch_#{version}_aarch64.dmg"
   end
   on_intel do
-    sha256 "8cb9664572850f8b9914cdc68b9c4ad343b2aa817b2514eafad178cbeb5c657c"
+    sha256 "2097f1a068caa6d26306a81c4ffacd582a97cddaebdbfe4584684aa54fb6f5ad"
+
     url "https://github.com/koedame/chordsketch/releases/download/desktop-v#{version}/ChordSketch_#{version}_x64.dmg"
   end
 
@@ -36,6 +38,13 @@ cask "chordsketch" do
   depends_on macos: :monterey
 
   app "ChordSketch.app"
+
+  zap trash: [
+    "~/Library/Application Support/me.koeda.chordsketch.desktop",
+    "~/Library/Caches/me.koeda.chordsketch.desktop",
+    "~/Library/Preferences/me.koeda.chordsketch.desktop.plist",
+    "~/Library/WebKit/me.koeda.chordsketch.desktop",
+  ]
 
   # Unsigned bundle. Homebrew Cask clears `com.apple.quarantine`
   # automatically during install, so users who `brew install
@@ -62,11 +71,4 @@ cask "chordsketch" do
 
     Tracking: https://github.com/koedame/chordsketch/issues/2075
   EOS
-
-  zap trash: [
-    "~/Library/Application Support/me.koeda.chordsketch.desktop",
-    "~/Library/Caches/me.koeda.chordsketch.desktop",
-    "~/Library/Preferences/me.koeda.chordsketch.desktop.plist",
-    "~/Library/WebKit/me.koeda.chordsketch.desktop",
-  ]
 end
