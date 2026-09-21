@@ -41,24 +41,27 @@ cask "jamjam" do
     "~/Library/WebKit/me.koeda.jamjam",
   ]
 
-  # The bundle is neither signed nor notarized yet. `brew install
-  # --cask` clears the Gatekeeper quarantine flag itself, so that
-  # path launches without the "damaged / unidentified developer"
-  # dialog. The caveat covers the two paths where nothing clears
-  # it: a DMG downloaded by hand from the release page, and
-  # `HOMEBREW_CASK_OPTS=--no-quarantine`.
+  # Homebrew stamps `com.apple.quarantine` on everything it downloads
+  # (it only skips that with `--no-quarantine`), and a bundle that
+  # Apple has not notarized opens as "jamjam.app is damaged and can't
+  # be opened" once that flag is on. Clearing it here is what makes
+  # `brew install --cask` land on a working app. homebrew-cask itself
+  # rejects this stanza, but a personal tap may carry it.
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/jamjam.app"]
+  end
+
   caveats <<~EOS
-    jamjam is not code-signed or notarized yet.
+    jamjam is not notarized by Apple yet.
 
-    Installed with `brew install --cask`? Homebrew clears the quarantine
-    flag for you and the app opens normally.
+    Installed with `brew install --cask`? This cask clears the Gatekeeper
+    quarantine flag after installing, so the app opens normally.
 
-    Downloaded the .dmg by hand, or installed with `--no-quarantine`?
-    Clear the flag yourself:
+    Downloaded the .dmg by hand from the release page? macOS blocks the
+    first launch. Either Control-click the app in Finder and pick "Open",
+    or clear the flag yourself:
 
       xattr -dr com.apple.quarantine "#{appdir}/jamjam.app"
-
-    On recent macOS you may also have to allow the app once in
-    System Settings -> Privacy & Security -> "Open Anyway".
   EOS
 end
