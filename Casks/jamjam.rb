@@ -11,15 +11,15 @@
 # name rather than building it from the cask version.
 
 cask "jamjam" do
-  version "0.1.0-rc.3"
+  version "0.1.0"
 
   on_arm do
-    sha256 "588c154410128602986b5302f8e30dbcad883a8fcc9c547cd63722185e0a5baf"
+    sha256 "a4a7e36a92e5b4d1b7f491666a55699daf26f15fe88837d299122259c7cb9fdd"
 
     url "https://github.com/koedame/p2paudiosession/releases/download/v#{version}/jamjam_0.1.0_aarch64.dmg"
   end
   on_intel do
-    sha256 "1c562174b094ba8a1038799f92045257a93eebe997a71151da88ed19bd70eb4a"
+    sha256 "124d0fee418b45d47a6ebcfb18ff7c1a818ca16bb116f4dc851e3cb0e5151eac"
 
     url "https://github.com/koedame/p2paudiosession/releases/download/v#{version}/jamjam_0.1.0_x64.dmg"
   end
