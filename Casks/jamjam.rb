@@ -11,15 +11,15 @@
 # name rather than building it from the cask version.
 
 cask "jamjam" do
-  version "0.1.0-rc.2"
+  version "0.1.0-rc.3"
 
   on_arm do
-    sha256 "95ae325349ff203473ba13b98125b91dca42ec06064797e8272e809391227210"
+    sha256 "588c154410128602986b5302f8e30dbcad883a8fcc9c547cd63722185e0a5baf"
 
     url "https://github.com/koedame/p2paudiosession/releases/download/v#{version}/jamjam_0.1.0_aarch64.dmg"
   end
   on_intel do
-    sha256 "3e8f99d0bc016e4144c33cdeb44f5eee77f3320baf5d46bb83062d02eb9e6440"
+    sha256 "1c562174b094ba8a1038799f92045257a93eebe997a71151da88ed19bd70eb4a"
 
     url "https://github.com/koedame/p2paudiosession/releases/download/v#{version}/jamjam_0.1.0_x64.dmg"
   end
@@ -47,9 +47,8 @@ cask "jamjam" do
   # be opened" once that flag is on. Clearing it here is what makes
   # `brew install --cask` land on a working app. homebrew-cask itself
   # rejects this stanza, but a personal tap may carry it.
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/jamjam.app"]
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/jamjam.app"]
   end
 
   caveats <<~EOS
