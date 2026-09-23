@@ -16,17 +16,17 @@ cask "jamjam" do
   on_arm do
     sha256 "a4a7e36a92e5b4d1b7f491666a55699daf26f15fe88837d299122259c7cb9fdd"
 
-    url "https://github.com/koedame/p2paudiosession/releases/download/v#{version}/jamjam_0.1.0_aarch64.dmg"
+    url "https://github.com/koedame/jamjam-client/releases/download/v#{version}/jamjam_0.1.0_aarch64.dmg"
   end
   on_intel do
     sha256 "124d0fee418b45d47a6ebcfb18ff7c1a818ca16bb116f4dc851e3cb0e5151eac"
 
-    url "https://github.com/koedame/p2paudiosession/releases/download/v#{version}/jamjam_0.1.0_x64.dmg"
+    url "https://github.com/koedame/jamjam-client/releases/download/v#{version}/jamjam_0.1.0_x64.dmg"
   end
 
   name "jamjam"
   desc "Low-latency P2P audio communication for musicians"
-  homepage "https://github.com/koedame/p2paudiosession"
+  homepage "https://github.com/koedame/jamjam-client"
 
   # Matches the baseline the installation guide states (macOS 11+).
   depends_on macos: :big_sur
@@ -58,8 +58,11 @@ cask "jamjam" do
     quarantine flag after installing, so the app opens normally.
 
     Downloaded the .dmg by hand from the release page? macOS blocks the
-    first launch. Either Control-click the app in Finder and pick "Open",
-    or clear the flag yourself:
+    first launch. On macOS 15 (Sequoia) and later, open System Settings ->
+    Privacy & Security and click "Open Anyway" next to the jamjam warning
+    (Control-click -> Open no longer overrides Gatekeeper as of macOS 15).
+    On macOS 14 and earlier, Control-click the app in Finder and pick
+    "Open". Or clear the flag yourself:
 
       xattr -dr com.apple.quarantine "#{appdir}/jamjam.app"
   EOS
