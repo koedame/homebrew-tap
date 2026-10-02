@@ -17,17 +17,17 @@
 # name rather than building it from the cask version.
 
 cask "jamjam@beta" do
-  version "0.1.0-beta.60"
+  version "0.1.0-beta.61"
 
   on_arm do
-    sha256 "e3675fc3693b7375d92c3e1c72d5191b3c5ba968e53330da3dc037b79f793852"
+    sha256 "d8b8a3861b110296f7f84948b1997919d15c0750dfaac7481328d69f23879462"
 
-    url "https://github.com/koedame/jamjam-client/releases/download/v#{version}/jamjam_0.1.0-60_aarch64.dmg"
+    url "https://github.com/koedame/jamjam-client/releases/download/v#{version}/jamjam_0.1.0-61_aarch64.dmg"
   end
   on_intel do
-    sha256 "d5eb438b3c3c6799dcc5ee72f9c4984d8527b6e9e92db9f0cf0865e46a8f137a"
+    sha256 "47e5d2539d6cda9b6a0e67fd0b4f702122d98d4c5078ad104d8f480a921092b2"
 
-    url "https://github.com/koedame/jamjam-client/releases/download/v#{version}/jamjam_0.1.0-60_x64.dmg"
+    url "https://github.com/koedame/jamjam-client/releases/download/v#{version}/jamjam_0.1.0-61_x64.dmg"
   end
 
   name "jamjam"
