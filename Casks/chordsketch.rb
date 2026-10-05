@@ -4,20 +4,21 @@
 #
 # Until #2075 adds Apple Developer ID signing + notarization,
 # the DMG is unsigned and Gatekeeper will block launch on first
-# open. The `caveats` block below tells users the exact
-# quarantine-flag-clear command they need — same pattern the
-# upstream Homebrew docs recommend for unsigned casks.
+# open. Homebrew leaves `com.apple.quarantine` on cask downloads
+# so that Gatekeeper makes its own checks, so a `brew install
+# --cask` user hits the same block as a manual DMG user. The
+# `caveats` block below tells them how to get past it.
 
 cask "chordsketch" do
-  version "0.7.0"
+  version "0.8.0"
 
   on_arm do
-    sha256 "9f4b5acf803d9a278763345eed290d4e5ea8cd4d5f47fb0b4c24c6c21dcc4ff8"
+    sha256 "ecb0ce983db57d53edac8045fdf495492754bdd8c1b96d7451487ecd64a41145"
 
     url "https://github.com/koedame/chordsketch/releases/download/desktop-v#{version}/ChordSketch_#{version}_aarch64.dmg"
   end
   on_intel do
-    sha256 "2097f1a068caa6d26306a81c4ffacd582a97cddaebdbfe4584684aa54fb6f5ad"
+    sha256 "11736c5606c9d549d4c9b76359729079d6d7b227120a1edc9c4164a27b558688"
 
     url "https://github.com/koedame/chordsketch/releases/download/desktop-v#{version}/ChordSketch_#{version}_x64.dmg"
   end
@@ -46,28 +47,21 @@ cask "chordsketch" do
     "~/Library/WebKit/me.koeda.chordsketch.desktop",
   ]
 
-  # Unsigned bundle. Homebrew Cask clears `com.apple.quarantine`
-  # automatically during install, so users who `brew install
-  # --cask` can launch the app directly — no manual step needed.
-  # The caveat block below is a safety net for two other paths:
-  # manual DMG download from the GitHub Release (where no
-  # quarantine clear happens), and setups that opt out via
-  # `HOMEBREW_CASK_OPTS=--no-quarantine`. Dropped entirely once
-  # #2075 lands Apple Developer ID signing + notarization.
+  # Unsigned bundle. Homebrew does not clear `com.apple.quarantine`
+  # (`--no-quarantine` is gone as of Homebrew 5.1), so every install
+  # path needs the manual step below on first launch. Dropped
+  # entirely once #2075 lands Apple Developer ID signing +
+  # notarization.
   caveats <<~EOS
-    The ChordSketch desktop bundle is not yet code-signed or notarized.
+    The ChordSketch desktop bundle is not yet code-signed or notarized,
+    so macOS Gatekeeper blocks it the first time you open it.
 
-    Installed via `brew install --cask`? Homebrew clears the Gatekeeper
-    quarantine flag for you and the app launches directly.
-
-    Downloaded the .dmg manually from GitHub Releases, or ran Homebrew
-    with `HOMEBREW_CASK_OPTS=--no-quarantine`? Clear the flag yourself:
+    Clear the quarantine flag once after installing:
 
       xattr -dr com.apple.quarantine "#{appdir}/ChordSketch.app"
 
-    On macOS Sequoia you may additionally need to approve the app the
-    first time it launches: System Settings → Privacy & Security →
-    "Open Anyway".
+    Or try to open the app, then go to System Settings → Privacy &
+    Security and choose "Open Anyway".
 
     Tracking: https://github.com/koedame/chordsketch/issues/2075
   EOS
