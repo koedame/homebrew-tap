@@ -4,30 +4,31 @@
 class Chordsketch < Formula
   desc "ChordPro file format parser and renderer"
   homepage "https://github.com/koedame/chordsketch"
-  license "MIT"
+  license all_of: ["MIT", "OFL-1.1"]
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/koedame/chordsketch/releases/download/v0.7.0/chordsketch-v0.7.0-aarch64-apple-darwin.tar.gz"
-      sha256 "a6c808317eefd7fc0fff7266543c6cf9ebf4d78375793b465a0ddeb273fe8114"
+      url "https://github.com/koedame/chordsketch/releases/download/v0.8.0/chordsketch-v0.8.0-aarch64-apple-darwin.tar.gz"
+      sha256 "285c8dd81a14827d844d2ff6c890bfed916214d415b7358bfb1f12594e0d489a"
     else
-      url "https://github.com/koedame/chordsketch/releases/download/v0.7.0/chordsketch-v0.7.0-x86_64-apple-darwin.tar.gz"
-      sha256 "a1ad8a9098da8d94f867cb63deaddd895d2e1ab1712939f6140d21e94d069888"
+      url "https://github.com/koedame/chordsketch/releases/download/v0.8.0/chordsketch-v0.8.0-x86_64-apple-darwin.tar.gz"
+      sha256 "0880b61e51f72ec953f2df88529d636c09eb9292247e9681ba34f06978ce2904"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/koedame/chordsketch/releases/download/v0.7.0/chordsketch-v0.7.0-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "a9b7dcb270a3bdf1fc86173f6bd1adf7843a6981bd825ae5e634276b486cb00d"
+      url "https://github.com/koedame/chordsketch/releases/download/v0.8.0/chordsketch-v0.8.0-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "02c778348b59adcc8aaf8a1334223bbb8e90b1244d3e388420e39cf267edd827"
     else
-      url "https://github.com/koedame/chordsketch/releases/download/v0.7.0/chordsketch-v0.7.0-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "9f38b260f3e9756a56e0aaee7a623af78e055cdc5351a4c6795f8bc053225656"
+      url "https://github.com/koedame/chordsketch/releases/download/v0.8.0/chordsketch-v0.8.0-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "322100db25d00afd1265f9d980a00750e6ee8dc0763d0fba13603e0f307d69b1"
     end
   end
 
   def install
     bin.install "chordsketch"
+    doc.install "LICENSE", "NOTICE", "THIRD_PARTY_LICENSES.md"
   end
 
   test do
