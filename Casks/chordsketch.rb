@@ -10,15 +10,15 @@
 # `caveats` block below tells them how to get past it.
 
 cask "chordsketch" do
-  version "0.8.0"
+  version "0.9.0"
 
   on_arm do
-    sha256 "ecb0ce983db57d53edac8045fdf495492754bdd8c1b96d7451487ecd64a41145"
+    sha256 "126c001293b42f75a4b8bf089f8024aa920ed44cb76739bd719591db763ca85c"
 
     url "https://github.com/koedame/chordsketch/releases/download/desktop-v#{version}/ChordSketch_#{version}_aarch64.dmg"
   end
   on_intel do
-    sha256 "11736c5606c9d549d4c9b76359729079d6d7b227120a1edc9c4164a27b558688"
+    sha256 "ba0c4b5c57c75985c78c1c233477c9b3be4fc0a7e259d79be153499bef617fcf"
 
     url "https://github.com/koedame/chordsketch/releases/download/desktop-v#{version}/ChordSketch_#{version}_x64.dmg"
   end
