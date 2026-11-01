@@ -12,7 +12,7 @@ class ChordsketchDesktop < Formula
   desc "ChordPro editor with live preview, transpose, and PDF export, built from source"
   homepage "https://github.com/koedame/chordsketch"
   url "https://github.com/koedame/chordsketch/archive/refs/tags/desktop-v0.9.0.tar.gz"
-  sha256 "ac2d9e13ab3fb8db347afebc1d2df62becb6404683eeef6bc6a0cb3dba1e961c"
+  sha256 "b192280bf27d9d24296decbeed86db28489f8c2a5e04a4b76a2cb52db041184f"
   # The desktop app (`apps/desktop`) is AGPL-3.0-only. The `install` block below
   # also builds `packages/npm`, which embeds the Bravura SMuFL outlines
   # (OFL-1.1) alongside the MIT-licensed Rust and JS source.
