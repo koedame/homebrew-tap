@@ -8,21 +8,21 @@ class Chordsketch < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/koedame/chordsketch/releases/download/v0.9.0/chordsketch-v0.9.0-aarch64-apple-darwin.tar.gz"
-      sha256 "addf59d7854d8b3b8dc7e2c78d4feb103d2a94232413e5f7125d7520cf60b6ce"
+      url "https://github.com/koedame/chordsketch/releases/download/v0.9.1/chordsketch-v0.9.1-aarch64-apple-darwin.tar.gz"
+      sha256 "3703ef17491a3ad232e77996d5037dac27abbafe86af7a263bee916752547883"
     else
-      url "https://github.com/koedame/chordsketch/releases/download/v0.9.0/chordsketch-v0.9.0-x86_64-apple-darwin.tar.gz"
-      sha256 "7e53371d337d074b974b84a107abe8445d41d89d4d0484555fc56b6fe45da1cb"
+      url "https://github.com/koedame/chordsketch/releases/download/v0.9.1/chordsketch-v0.9.1-x86_64-apple-darwin.tar.gz"
+      sha256 "1e820a1aeb98c9963abe2b3fe9095604cd7bb17b0a5a6650e3e293f6614c9d51"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/koedame/chordsketch/releases/download/v0.9.0/chordsketch-v0.9.0-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "a2b84ffe14402ca960d85c139064f64bb55a5d24536a9da882b78f689afcba6a"
+      url "https://github.com/koedame/chordsketch/releases/download/v0.9.1/chordsketch-v0.9.1-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "2d84d383f40cab6577f779a79aeeae0308ff4b38cc3f55ac251b8442c3f6d8ef"
     else
-      url "https://github.com/koedame/chordsketch/releases/download/v0.9.0/chordsketch-v0.9.0-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "77a3ce0c62a7d12fa4a6388aa740ca092c0ed00b8432a1f4de65649f3bcbb822"
+      url "https://github.com/koedame/chordsketch/releases/download/v0.9.1/chordsketch-v0.9.1-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "cfed5e7412665b7e4a3960729b68ad59ad7434e9ddfe4c46238deb8e64cf11e4"
     end
   end
 
