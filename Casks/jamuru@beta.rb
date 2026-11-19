@@ -17,17 +17,17 @@
 # name rather than building it from the cask version.
 
 cask "jamuru@beta" do
-  version "0.1.0-beta.259"
+  version "0.1.0-beta.260"
 
   on_arm do
-    sha256 "99a7c8126fc2d79fe752d5ec619c1d96472ee781a8a3cf9508cb6bb1802944e6"
+    sha256 "d8b586338b83f0d92faceff5b882f20dcff6e3f53c938ea32f36a4f54c0e6b8e"
 
-    url "https://github.com/koedame/jamuru-client/releases/download/v#{version}/jamuru_0.1.0-259_aarch64.dmg"
+    url "https://github.com/koedame/jamuru-client/releases/download/v#{version}/jamuru_0.1.0-260_aarch64.dmg"
   end
   on_intel do
-    sha256 "df7f9b3d28bab6fe25edc07cb0918f8e91130cadcd0458cae05af50fd729188d"
+    sha256 "74aecf256e1100220ab8564ca074c84b872bad1204cbe09ba6727dda18cea0fa"
 
-    url "https://github.com/koedame/jamuru-client/releases/download/v#{version}/jamuru_0.1.0-259_x64.dmg"
+    url "https://github.com/koedame/jamuru-client/releases/download/v#{version}/jamuru_0.1.0-260_x64.dmg"
   end
 
   name "jamuru"
